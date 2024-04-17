@@ -1,0 +1,13 @@
+use "maBaseDeDonnée" // pour se placer dans la bdd (pour créer une bdd je me place dedans et je crée une table)
+db.dropDatabase() // supprimer une bdd
+db.createCollection("utilisateur") //créer une table "utilisateur"
+db.utilisateur.drop() // Supprimer une table
+db.utilisateur.insertOne({nom:"renifle",age:7,ville:"montataire"}) // créer une donnée dans la table sous forme d'objet
+db.utilisateur.insertMany([{nom:"renifle",age:7,ville:"montataire"},{nom:"reniflette",age:9,ville:"nogent"}]) // créer plusieurs données dans la table sous forme d'objet dans un tableau
+db.utilisateur.deleteOne({ville: "montataire"}) // supprimer un objet ( via une seule donnée)
+db.utilisateur.findOne({ville:"nogent"}) // lire un objet
+db.utilisateur.updateOne({ville:"nogent"},{$set: {ville:"nogent1"}}) // Mettre a jour la donnée
+db.utilisateur.find() // lire la table 
+ 
+
+db.boutique.insertMany([{nom:"maillot",prix:10,taille:"S"},{nom:"robe",prix:10,taille:"M"},{nom:"t-shirt",prix:10,taille:"L"},{nom:"jean",prix:10,taille:"S"},{nom:"pantalon",prix:10,taille:"S"},{nom:"manteau",prix:10,taille:""}])
